@@ -22,13 +22,13 @@ func attack(charName, charClass string) string {
 }
 
 // обратите внимание на "if else" и на "else"
-func defence(char_name, charclass string) string {
+func defence(charName, charclass string) string {
 	if charclass == "warrior" {
-		return fmt.Sprintf("%s блокировал %d урона.", char_name, 10+randint(5, 10))
+		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+randint(5, 10))
 	} else if charclass == "mage" {
-		return fmt.Sprintf("%s блокировал %d урона.", char_name, 10+randint(-2, 2))
+		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+randint(-2, 2))
 	} else if charclass == "healer" {
-		return fmt.Sprintf("%s блокировал %d урона.", char_name, 10+randint(2, 5))
+		return fmt.Sprintf("%s блокировал %d урона.", charName, 10+randint(2, 5))
 	}
 	return "неизвестный класс персонажа"
 }
@@ -49,17 +49,17 @@ func special(charName, charClass string) string {
 }
 
 // здесь обратите внимание на имена параметров
-func startTraining(charname, charClass string) string {
+func startTraining(charName, charClass string) string {
 	if charClass == "warrior" {
-		fmt.Printf("%s, ты Воитель - отличный боец ближнего боя.\n", char_name)
+		fmt.Printf("%s, ты Воитель - отличный боец ближнего боя.\n", charName)
 	}
 
 	if charClass == "mage" {
-		fmt.Printf("%s, ты Маг - превосходный укротитель стихий.\n", char_name)
+		fmt.Printf("%s, ты Маг - превосходный укротитель стихий.\n", charName)
 	}
 
 	if charClass == "healer" {
-		fmt.Printf("%s, ты Лекарь - чародей, способный исцелять раны.\n", char_name)
+		fmt.Printf("%s, ты Лекарь - чародей, способный исцелять раны.\n", charName)
 	}
 
 	fmt.Println("Потренируйся управлять своими навыками.")
@@ -74,15 +74,15 @@ func startTraining(charname, charClass string) string {
 		fmt.Scanf("%s\n", &cmd)
 
 		if cmd == "attack" {
-			fmt.Println(attack(char_name, char_class))
+			fmt.Println(attack(charName, charClass))
 		}
 
 		if cmd == "defence" {
-			fmt.Println(defence(char_name, char_class))
+			fmt.Println(defence(charName, charClass))
 		}
 
 		if cmd == "special" {
-			fmt.Println(special(char_name, char_class))
+			fmt.Println(special(charName, charClass))
 		}
 	}
 
@@ -127,7 +127,7 @@ func main() {
 
 	charClass := choiseCharClass()
 
-	fmt.Println(start_training(charName, charClass))
+	fmt.Println(startTraining(charName, charClass))
 }
 
 func randint(min, max int) int {
